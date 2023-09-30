@@ -1,4 +1,4 @@
-package com.alexogden.module;
+package com.alexogden.command;
 
 import com.alexogden.core.SCEssentials;
 import org.bukkit.command.CommandExecutor;

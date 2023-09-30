@@ -2,7 +2,7 @@ package com.alexogden.core;
 
 import com.alexogden.core.logging.ServerLog;
 import com.alexogden.module.ServerModule;
-import com.alexogden.module.entitycleaner.EntityCleaner;
+import com.alexogden.module.entity.EntityCleaner;
 import com.alexogden.module.server.CloseServer;
 import com.alexogden.module.server.Core;
 import org.bukkit.Bukkit;

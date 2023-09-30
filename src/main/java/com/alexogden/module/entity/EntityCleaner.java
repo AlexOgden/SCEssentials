@@ -1,8 +1,8 @@
-package com.alexogden.module.entitycleaner;
+package com.alexogden.module.entity;
 
 import com.alexogden.core.SCEssentials;
 import com.alexogden.core.logging.ServerLog;
-import com.alexogden.module.CommandHandler;
+import com.alexogden.command.CommandHandler;
 import com.alexogden.module.ServerModule;
 import com.alexogden.util.Pair;
 import com.alexogden.util.TimeUtil;
