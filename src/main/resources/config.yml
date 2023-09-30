@@ -1,0 +1,7 @@
+entity-cleaner:
+  enabled: true
+  max-entity-age: 15
+  clean-interval: 15
+  broadcast: true
+close-server:
+  enabled: true
