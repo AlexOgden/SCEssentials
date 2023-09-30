@@ -43,6 +43,7 @@ public class EntityCleaner implements ServerModule {
 		plugin.getServer().getPluginManager().registerEvents(eventHandler, plugin);
 		commandHandler.register();
 		scheduleTask();
+		enable();
 	}
 
 	private void scheduleTask() {
@@ -147,8 +148,6 @@ public class EntityCleaner implements ServerModule {
 		} else {
 			ServerLog.sendConsoleMessage(Level.INFO, "No entities to clean");
 		}
-
-		ServerLog.broadcast("Entity map size after clean: " + entityMap.size(), getName());
 	}
 
 	public void shutdown() {
