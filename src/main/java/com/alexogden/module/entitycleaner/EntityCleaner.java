@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.StringUtil;
 
@@ -100,6 +101,12 @@ public class EntityCleaner implements ServerModule {
 				Item droppedItem = event.getItemDrop();
 				entityMap.put(droppedItem, new Pair<>(player.getName(), System.currentTimeMillis()));
 			}
+
+			@EventHandler
+			public void onPlayerQuit(PlayerQuitEvent event) {
+				if(!Bukkit.getOnlinePlayers().isEmpty())
+					cleanEntities(0);
+			}
 		};
 	}
 
@@ -109,7 +116,8 @@ public class EntityCleaner implements ServerModule {
 			return;
 		}
 
-		cleanEntities(maxEntityAge);
+		if(!Bukkit.getOnlinePlayers().isEmpty())
+			cleanEntities(maxEntityAge);
 	}
 
 	private void cleanEntities(int maxAge) {
