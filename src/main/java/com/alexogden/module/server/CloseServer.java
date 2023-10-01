@@ -1,8 +1,8 @@
 package com.alexogden.module.server;
 
+import com.alexogden.command.CommandHandler;
 import com.alexogden.core.SCEssentials;
 import com.alexogden.core.logging.ServerLog;
-import com.alexogden.command.CommandHandler;
 import com.alexogden.module.ServerModule;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
