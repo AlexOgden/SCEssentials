@@ -54,7 +54,7 @@ public class SCEssentials extends JavaPlugin {
 
 
 		for (ServerModule m : modules) {
-			ServerLog.sendConsoleMessage(Level.INFO, "Enabling Module: " + m.getName());
+			ServerLog.sendConsoleMessage("Enabling Module: " + m.getName());
 			m.init();
 		}
 	}
@@ -62,19 +62,19 @@ public class SCEssentials extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		for (ServerModule m : modules) {
-			ServerLog.sendConsoleMessage(Level.INFO, "Stopping Module: " + m.getName());
+			ServerLog.sendConsoleMessage("Stopping Module: " + m.getName());
 			m.shutdown();
 		}
 	}
 
 	public void reloadModules() {
 		for (ServerModule m : modules) {
-			ServerLog.sendConsoleMessage(Level.INFO, "Reloading Module: " + m.getName());
+			ServerLog.sendConsoleMessage("Reloading Module: " + m.getName());
 			m.reloadConfig();
 		}
 		super.reloadConfig();
 
-		ServerLog.sendConsoleMessage(Level.INFO, "Reloaded all plugins");
+		ServerLog.sendConsoleMessage("Reloaded all plugins");
 	}
 
 	@Override
