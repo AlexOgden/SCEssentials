@@ -64,10 +64,6 @@ public class Core implements ServerModule {
 		return "Core";
 	}
 
-	@Override
-	public void execute() {
-		// Not Required
-	}
 
 	@Override
 	public void shutdown() {

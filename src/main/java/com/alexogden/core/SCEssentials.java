@@ -3,6 +3,7 @@ package com.alexogden.core;
 import com.alexogden.core.logging.ServerLog;
 import com.alexogden.module.ServerModule;
 import com.alexogden.module.entity.EntityCleaner;
+import com.alexogden.module.entity.jukebox.InfiniJukebox;
 import com.alexogden.module.server.CloseServer;
 import com.alexogden.module.server.Core;
 import org.bukkit.Bukkit;
@@ -47,6 +48,9 @@ public class SCEssentials extends JavaPlugin {
 
 		if (getConfig().getBoolean("close-server.enabled"))
 			modules.add(new CloseServer());
+
+		if(getConfig().getBoolean("infini-jukebox.enabled"))
+			modules.add(new InfiniJukebox());
 
 
 		for (ServerModule m : modules) {

@@ -4,6 +4,11 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class TimeUtil {
+
+	private TimeUtil() {
+		throw new IllegalStateException("Static Class");
+	}
+
 	public static long convertMinutesToTicks(int minutes) {
 		long ticksPerSecond = 20L;
 		long ticksPerMinute = 60L * ticksPerSecond;

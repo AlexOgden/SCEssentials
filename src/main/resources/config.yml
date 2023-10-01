@@ -5,3 +5,5 @@ entity-cleaner:
   broadcast: true
 close-server:
   enabled: true
+infini-jukebox:
+  enabled: true

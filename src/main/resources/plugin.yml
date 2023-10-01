@@ -15,6 +15,10 @@ commands:
     description: Manually Trigger an entity cleanup
     usage: /eclean
     permission: sce.admin
+  jukebox:
+    description: Enable of Disable InfiniJukebox
+    usage: /jukebox <enable | disable>
+    permission: sce.admin
   server:
     description: Open or Close the Server
     usage: /server <close | open>

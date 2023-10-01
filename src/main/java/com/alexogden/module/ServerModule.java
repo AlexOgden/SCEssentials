@@ -6,8 +6,6 @@ public interface ServerModule {
 
 	String getName();
 
-	void execute();
-
 	void shutdown();
 
 	void reloadConfig();

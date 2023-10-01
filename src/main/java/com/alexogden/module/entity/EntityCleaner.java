@@ -110,7 +110,6 @@ public class EntityCleaner implements ServerModule {
 		};
 	}
 
-	@Override
 	public void execute() {
 		if (!enabled) {
 			return;

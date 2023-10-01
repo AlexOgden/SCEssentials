@@ -161,11 +161,6 @@ public class CloseServer implements ServerModule {
 	}
 
 	@Override
-	public void execute() {
-		ServerLog.sendConsoleMessage(Level.INFO, "Server Closed Status: " + (isClosed() ? "Open" : "Closed"));
-	}
-
-	@Override
 	public void shutdown() {
 		close();
 	}
