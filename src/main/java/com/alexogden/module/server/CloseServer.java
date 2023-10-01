@@ -96,33 +96,21 @@ public class CloseServer implements ServerModule {
 		return new Listener() {
 			@EventHandler
 			public void onPlayerJoin(PlayerJoinEvent event) {
-				Player player = event.getPlayer();
-
 				if (isClosed()) {
-
-					if (!player.isOnline()) {
-						return;
+					Player player = event.getPlayer();
+					if (player.isOnline()) {
+						event.joinMessage(null);
+						String message = "Server is closed!";
+						Component parsed = MiniMessage.miniMessage().deserialize(message);
+						Bukkit.getScheduler().runTaskLater(plugin, () -> player.kick(parsed), 10L);
 					}
-
-					event.joinMessage(null);
-					var miniMessage = MiniMessage.miniMessage();
-					String message = "Server is closed!";
-					Component parsed = miniMessage.deserialize(message);
-
-					Bukkit.getScheduler().runTaskLater(plugin, () -> player.kick(parsed), 10L);
 				}
 			}
 
 			@EventHandler
 			public void onServerListPing(ServerListPingEvent event) {
-				var miniMessage = MiniMessage.miniMessage();
-				Component parsed;
-				if (closed) {
-					parsed = miniMessage.deserialize(closedMOTD);
-				} else {
-					parsed = miniMessage.deserialize(openMOTD);
-				}
-				event.motd(parsed);
+				String motd = isClosed() ? closedMOTD : openMOTD;
+				event.motd(MiniMessage.miniMessage().deserialize(motd));
 			}
 		};
 	}
