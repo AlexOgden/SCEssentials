@@ -39,13 +39,11 @@ public class Core implements ServerModule {
 
 					String subCommand = args[0];
 
-					switch (subCommand) {
-						case "reload":
-							SCEssentials.getInstance().reloadModules();
-							break;
-						default:
-							ServerLog.sendPlayerMessage(commandSender, "<red>Unknown sub-command: " + subCommand + "</red>");
-							return true;
+					if (subCommand.equals("reload")) {
+						SCEssentials.getInstance().reloadModules();
+					} else {
+						ServerLog.sendPlayerMessage(commandSender, "<red>Unknown sub-command: " + subCommand + "</red>");
+						return true;
 					}
 
 					return true;
